@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>みんなの掲示板</title>
+  <style>
+    /* マイメロ風カラーの設定 */
+    :root {
+      --bg-color: #fff0f5;          /* ミルキーピンク（全体の背景） */
+      --card-bg: #ffffff;           /* 白（カード・差し色） */
+      --primary-color: #ffb6c1;      /* イチゴミルクピンク（メイン・ボタン） */
+      --primary-hover: #ff9aa2;      /* ボタンを押した時のピンク */
+      --text-color: #4a3525;         /* こげ茶（メイン文字色） */
+      --sub-text-color: #8c7365;     /* 薄いこげ茶（サブ文字色） */
+      --border-color: #fce4ec;       /* 枠線の淡いピンク */
+      --like-color: #ff6b81;         /* いいねボタンの色 */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 20px 10px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: var(--text-color);
+      margin-bottom: 5px;
+    }
+
+    header p {
+      color: var(--sub-text-color);
+      font-size: 0.9rem;
+    }
+
+    /* 投稿フォーム */
+    .post-form {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(74, 53, 37, 0.05);
+      margin-bottom: 25px;
+      border: 2px solid var(--border-color);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: var(--text-color);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      color: var(--text-color);
+      outline: none;
+      background-color: #fafafa;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary-color);
+      background-color: #ffffff;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: var(--primary-color);
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
